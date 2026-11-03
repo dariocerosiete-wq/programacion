@@ -14,7 +14,7 @@ public class Ejercicio5_Dario_Romero_Romero {
 
         metros = numeroMillas * UNA_MILLA;
 
-        System.out.printf("%.2f millas marinas son %.2f metros",  numeroMillas, metros);
+        System.out.printf("%.2f millas marinas son %.2f metros", numeroMillas, metros);
 
     }
 }

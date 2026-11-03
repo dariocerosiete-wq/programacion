@@ -11,6 +11,6 @@ public class Ejercicio1_Dario_Romero_Romero {
         int areaCuadrado = ladoCorto * ladoLargo;
 
         //Resultado
-        System.out.println("El area del cuadrado 5x5 es: " +  areaCuadrado);
+        System.out.println("El area del cuadrado 5x5 es: " + areaCuadrado);
     }
 }

@@ -17,7 +17,7 @@ public class Ejercicio8_Dario_Romero_Romero {
         } else if (nota == 0 || nota < 3) {
             System.out.println("Muy deficiente");
         } else if (nota == 3 || nota < 5) {
-            System.out.println("Insuficiente" );
+            System.out.println("Insuficiente");
         } else if (nota == 5) {
             System.out.println("Bien");
         } else if (nota == 6 || nota < 9) {

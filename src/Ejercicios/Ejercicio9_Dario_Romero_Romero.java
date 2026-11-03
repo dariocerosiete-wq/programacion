@@ -13,7 +13,7 @@ public class Ejercicio9_Dario_Romero_Romero {
         System.out.print("Introduzca la hora: ");
         hora = sc.nextInt();
 
-        System.out.print("Introduzcalos minutos: ");
+        System.out.print("Introduzca los minutos: ");
         minuto = sc.nextInt();
 
         System.out.print("Introduzca los segundos: ");

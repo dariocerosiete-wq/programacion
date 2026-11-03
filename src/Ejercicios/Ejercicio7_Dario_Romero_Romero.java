@@ -14,7 +14,7 @@ public class Ejercicio7_Dario_Romero_Romero {
         System.out.print("Introduce el primer número: ");
         numero1 = sc.nextInt();
 
-        System.out.print("Introduce el segundo numero:  ");
+        System.out.print("Introduce el segundo numero: ");
         numero2 = sc.nextInt();
 
         System.out.print("Introduce el tercer numero: ");

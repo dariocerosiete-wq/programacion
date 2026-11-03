@@ -16,7 +16,7 @@ public class Ejercicio2_Dario_Romero_Romero {
 
         //lee el segundo lado
         System.out.print("Escribe el segundo lado el lado largo del cuadrado: ");
-        ladoLargo =  sc.nextDouble();
+        ladoLargo = sc.nextDouble();
 
         //operacion
         double areaCuadrado = ladoCorto * ladoLargo;
