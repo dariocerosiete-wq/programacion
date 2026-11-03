@@ -16,6 +16,6 @@ public class Ejercicio4_Descuento_Dario_Romero_Romero {
         precioArticulo = sc.nextDouble();
 
         descuento = ((precioOriginal - precioArticulo) / precioOriginal) * 100;
-        System.out.printf("El descuento es: %.2f %% ", descuento);
+        System.out.printf("El descuento es: %.2f %% ",  descuento);
     }
 }
