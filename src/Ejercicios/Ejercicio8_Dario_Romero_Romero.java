@@ -14,15 +14,15 @@ public class Ejercicio8_Dario_Romero_Romero {
 
         if (nota < 0 || nota > 10) {
             System.out.println("Nota no válida");
-        } else if (nota == 0 || nota < 3) {
+        } else if (nota < 3) {
             System.out.println("Muy deficiente");
-        } else if (nota == 3 || nota < 5) {
+        } else if (nota < 5) {
             System.out.println("Insuficiente");
-        } else if (nota == 5) {
+        } else if (nota < 6) {
             System.out.println("Bien");
-        } else if (nota == 6 || nota < 9) {
+        } else if ( nota< 9) {
             System.out.println("Notable");
-        } else if (nota == 9 || nota == 10) {
+        } else if (nota <= 10) {
             System.out.println("Sobresaliente");
         }
     }
