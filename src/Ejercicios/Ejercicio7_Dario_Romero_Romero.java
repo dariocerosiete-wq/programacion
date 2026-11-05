@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio7_Dario_Romero_Romero {
     public static void main(String[] args) {
 
-        int numero1, numero2, numero3;
+        int numero1, numero2, numero3, menor, maximo, medio;
         String resultado = "Ordenación de menor a mayor:";
 
 
@@ -21,9 +21,9 @@ public class Ejercicio7_Dario_Romero_Romero {
         numero3 = sc.nextInt();
 
 
-        int menor = Math.min(numero1, Math.min(numero2, numero3));
-        int maximo = Math.max(numero1, Math.max(numero2, numero3));
-        int medio = (numero1 + numero2 + numero3) - menor - maximo;
+        menor = Math.min(numero1, Math.min(numero2, numero3));
+        maximo = Math.max(numero1, Math.max(numero2, numero3));
+        medio = (numero1 + numero2 + numero3) - menor - maximo;
 
         System.out.println(resultado + " " + menor + " " + medio + " " + maximo);
     }
