@@ -6,7 +6,7 @@ public class Ejercicio10_Dario_Romero_Romero {
     public static void main(String[] args) {
         String nombreTrabajador;
         int horasTrabajadas;
-        double salarioNeto, salarioBruto, tarifa, impuesto = 0;
+        double salarioNeto, salarioBruto, tarifa, impuesto;
         Scanner sc = new Scanner(System.in);
 
         System.out.print("¿Cómo te llamas?: ");
