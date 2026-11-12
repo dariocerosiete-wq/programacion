@@ -9,15 +9,15 @@ import java.util.Scanner;
 public class Ejercicio5_Dario_Romero_Romero {
     static void main(String[] args) {
         int numero;
-        int factorial = numero;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduce el numero: ");
         numero = sc.nextInt();
 
+        int factorial = numero;
+        System.out.printf("El factorial de %d ",factorial,"es: ");
         for (int i = 0; i <= numero; i++) {
             System.out.println(factorial = numero * (numero-i));
         }
-        System.out.printf("El factorial de: %d ",factorial);
     }
 }
