@@ -10,68 +10,72 @@ import java.util.Scanner;
 
 public class EnvioPaquete_Dario_Romero_Romero {
     public static void main(String[] args) {
-        final double TARIFA_PENINSULA = 5;
-        final double TARIFA_BALEARES = 8;
-        final double TARIFA_CANARIAS = 12;
-        final int PESO_MAXIMO = 30;
-        final int PESO_LIGERO = 2;           // hasta 2 kg no hay recargo
-        final int PESO_MEDIO = 10;           // de 3 a 10 kg, recargo medio
-        final double RECARGO_MEDIO = 3;
-        final double RECARGO_PESADO = 7;     // más de 10 kg
-        final double RECARGO_URGENTE = 0.5;  // 50 % sobre tarifa + recargo
-        Scanner entrada = new Scanner(System.in);
-        String destinatario;
-        char zona, urgente;
+
+        Scanner sc = new Scanner(System.in);
+
+        //declaración de variables
+        String destinatario, zonaIntroducida, urgenciaIntroducida;
+        final int TARIFA_PENINSULA = 5, TARIFA_BALEARES = 8, TARIFA_CANARIAS = 12;
+        final int SIN_RECARGO = 0, RECARGO_SIMPLE = 3, RECARGO_PESADO = 7;
         int peso;
-        double tarifa, recargoPeso, urgencia, total;
+        boolean urgente;
+        char zona;
+        double tarifaBase, recargo = 0, precioTotal = 0;
 
-        // Lectura: el destinatario va primero porque puede tener espacios; las letras se pasan a mayúscula
-        System.out.print("Destinatario: ");
-        destinatario = entrada.nextLine();
-        System.out.print("Zona (P/B/C): ");
-        zona = Character.toUpperCase(entrada.next().charAt(0));
-        System.out.print("Peso (kg): ");
-        peso = entrada.nextInt();
-        System.out.print("Urgente (S/N): ");
-        urgente = Character.toUpperCase(entrada.next().charAt(0));
+        // lectura de datos
+        System.out.print("Introduce el nombre del destinatario: ");
+        destinatario = sc.nextLine();
 
-        // Tarifa base según la zona: -1 marca una zona desconocida
-        tarifa = switch (zona) {
+        System.out.print("Introduce la zona de destino (P/B/C, península, Baleares, Canarias respectivamente: ");
+        zonaIntroducida = sc.next();
+        zona = zonaIntroducida.toUpperCase().charAt(0);
+
+        System.out.print("Introduce el peso del paquete: ");
+        peso = sc.nextInt();
+
+        System.out.print("Introduce si es urgente o no: ");
+        urgenciaIntroducida = sc.next();
+        urgente = urgenciaIntroducida.toUpperCase().charAt(0) == 'S';
+
+        tarifaBase = switch (zona) {
             case 'P' -> TARIFA_PENINSULA;
             case 'B' -> TARIFA_BALEARES;
             case 'C' -> TARIFA_CANARIAS;
             default -> -1;
         };
 
-        // Validaciones: un mensaje y se termina el programa
-        if (tarifa < 0) {
+        // validamos los datos
+        if (tarifaBase == -1) {
             System.out.println("Zona no válida");
             System.exit(0);
         }
-        if (peso < 1 || peso > PESO_MAXIMO) {
+
+        if (peso < 1 || peso > 30) {
             System.out.println("Peso no válido");
             System.exit(0);
         }
 
-        // Recargo por peso, por tramos
-        if (peso <= PESO_LIGERO) {
-            recargoPeso = 0;
-        } else if (peso <= PESO_MEDIO) {
-            recargoPeso = RECARGO_MEDIO;
+        // calculamos el recargo
+        if (peso <= 2) {
+            recargo = SIN_RECARGO;
+        } else if (peso <= 10) {
+            recargo = RECARGO_SIMPLE;
         } else {
-            recargoPeso = RECARGO_PESADO;
+            recargo = RECARGO_PESADO;
         }
 
-        // Urgencia: la mitad de lo anterior, sólo si se pide
-        urgencia = urgente == 'S' ? (tarifa + recargoPeso) * RECARGO_URGENTE : 0;
-        total = tarifa + recargoPeso + urgencia;
+        precioTotal = tarifaBase + recargo;
 
-        // Salida en forma de ticket: etiquetas a la izquierda, cantidades a la derecha y su unidad
-        System.out.println("Envío para " + destinatario + " (zona " + zona + ")");
+        if (urgente) {
+            precioTotal *= 1.5;
+        }
+
+        System.out.printf("Envío para %s (zona %c)%n", destinatario, zona);
         System.out.printf("%-16s%8d kg%n", "Peso", peso);
-        System.out.printf("%-16s%8.2f €%n", "Tarifa base", tarifa);
-        System.out.printf("%-16s%8.2f €%n", "Recargo peso", recargoPeso);
-        System.out.printf("%-16s%8.2f €%n", "Urgencia", urgencia);
-        System.out.printf("%-16s%8.2f €%n", "TOTAL", total);
+        System.out.printf("%-16s%8.2f €%n", "Tarifa base", tarifaBase);
+        System.out.printf("%-16s%8.2f €%n", "Recargo peso", recargo);
+        System.out.printf("%-16s%8.2f €%n", "Urgencia", (tarifaBase + recargo) * 0.5);
+        System.out.printf("%-16s%8.2f €%n", "TOTAL", precioTotal);
+
     }
 }
