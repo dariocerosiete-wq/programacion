@@ -14,9 +14,9 @@ public class EnvioPaquete_Dario_Romero_Romero {
         Scanner sc = new Scanner(System.in);
 
         //declaración de variables
-        String destinatario, zonaIntroducida, urgenciaIntroducida;
-        final int TARIFA_PENINSULA = 5, TARIFA_BALEARES = 8, TARIFA_CANARIAS = 12;
         final int SIN_RECARGO = 0, RECARGO_SIMPLE = 3, RECARGO_PESADO = 7;
+        final int TARIFA_PENINSULA = 5, TARIFA_BALEARES = 8, TARIFA_CANARIAS = 12;
+        String destinatario, zonaIntroducida, urgenciaIntroducida;
         int peso;
         boolean urgente;
         char zona;
