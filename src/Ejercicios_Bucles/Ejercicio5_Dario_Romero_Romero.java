@@ -8,16 +8,22 @@ import java.util.Scanner;
 
 public class Ejercicio5_Dario_Romero_Romero {
     static void main(String[] args) {
-        int numero;
+        int numero, resultadoo = 1;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduce el numero: ");
         numero = sc.nextInt();
 
-        int factorial = numero;
-        System.out.printf("El factorial de %d es: ",factorial);
-        for (int i = 0; i <= numero; i++) {
-            System.out.println(factorial = numero * (numero-i));
+
+        if (numero < 0) {
+            System.exit(0);
         }
+
+        do {
+            resultadoo = resultadoo * numero;
+            numero = numero - 1;
+        } while (numero >= 1);
+
+        System.out.println("El factorial es: " + resultadoo);
     }
 }
