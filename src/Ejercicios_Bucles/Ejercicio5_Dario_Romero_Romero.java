@@ -15,7 +15,7 @@ public class Ejercicio5_Dario_Romero_Romero {
         numero = sc.nextInt();
 
         int factorial = numero;
-        System.out.printf("El factorial de %d ",factorial,"es: ");
+        System.out.printf("El factorial de %d es: ",factorial);
         for (int i = 0; i <= numero; i++) {
             System.out.println(factorial = numero * (numero-i));
         }
