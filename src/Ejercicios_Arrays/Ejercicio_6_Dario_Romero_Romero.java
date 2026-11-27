@@ -11,10 +11,10 @@ public class Ejercicio_6_Dario_Romero_Romero {
         int n, m;
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Intruduzca el tamaño del array: ");
+        System.out.print("Intoruduzca el tamaño del array: ");
         n = sc.nextInt();
 
-        System.out.print("Intruduzca las posiciones del array: ");
+        System.out.print("Introuduzca las posiciones del array: ");
         m = sc.nextInt();
 
         // Creando el array con lo que me ha dicho el usuario
